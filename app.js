@@ -16,7 +16,9 @@ app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-
+app.get("/", (req, res) => {
+  res.status(200).json({ msg: "nonononono" });
+});
 app.use("/api", ApiRouter);
 
 // 404 Not Found Middleware
