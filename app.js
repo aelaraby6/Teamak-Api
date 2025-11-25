@@ -17,7 +17,14 @@ app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get("/", (req, res) => {
-  res.status(200).json({ msg: "nonononono" });
+  res.status(200).json({
+    message: "Welcome to Teamak Api....",
+    status: "success",
+    version: "1.0.0",
+    endpoints: {
+      "/": "GET - Welcome message",
+    },
+  });
 });
 app.use("/api", ApiRouter);
 
